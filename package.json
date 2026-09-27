@@ -1,26 +1,12 @@
 {
-  "name": "workspace",
+  "name": "@workspace/api-zod",
   "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "start": "tsx artifacts/api-server/src/discord-bot.ts",
-    "build": "npm run typecheck && npm run build --workspaces --if-present",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present"
-  },
   "private": true,
-  "workspaces": [
-    "artifacts/*",
-    "lib/*",
-    "lib/integrations/*",
-    "scripts"
-  ],
-  "dependencies": {
-    "@replit/connectors-sdk": "^0.4.3"
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
   },
-  "devDependencies": {
-    "prettier": "^3.9.6",
-    "tsx": "^4.21.0",
-    "typescript": "~5.9.3"
+  "dependencies": {
+    "zod": "^3.25.76"
   }
 }
